@@ -5,63 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gigleaz</title>
     <link rel="stylesheet" href="style_page.css">
-    <link >
+    <script src="main.js"></script>
 </head>
 <body>
-  <header>
-    <div class="header-left">
-        <div class="logo">
-            <img src="primary_logo.png" alt="">
-        </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="" class="active">Home</a>
-                </li>
-                <li>
-                    <a href="">Opportunity</a>
-                </li>
-                <li>
-                    <a href="">Career</a>
-                </li>
-                <li>
-                    <a href="">About</a>
-                </li>
-                <li>
-                    <a href="">Support</a>
-                </li>
-            </ul>
-            <div class="login-signup">
-                <a href="">Login</a> or <a href="">Signup</a>
-            </div>
-        </nav>
+  <header class="custom-header"><!--header-start-->
+    <img src="primary_logo.png" height="45px"/>
+    <div class="custom-nav-details">
+        
+        <a href="" >Opportunities</a>
+        <a href="" >Discern</a>
+        <a href="" >Investors</a>
+        <a href="" >Careers</a>
     </div>
-    <div class="header-right">
-        <div class="login-signup">
-            <a href="">Login</a> or <a href="">Signup</a>
-        </div>
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+    <a href="#" class="custom-nav-ico">
+        <label for="custom-menu-trigger"></label>
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+<!--header-end-->
+<input type="checkbox" id="custom-menu-trigger" name="custom-menu-close" hidden>
+<nav class="custom-side-nav">
+    <label for="custom-menu-trigger" class="custom-close-icon">+</label>
+    <img src="primary_logo.png" height="45px" style="padding-left: 12px;margin-bottom: 30px;"/>
+    <ul style="font-weight: bold;">
+        <li><a href="#" >Join Us</a>
+        </li>
+        <li><a href="#">Excutive Leaders</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#" onclick="document.getElementById('services-trigger').click();">Services</a></li>
+        <li><a href="#">Industries</a></li>
+        <li><a href="#">Platforms</a></li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p><a href="">News Room</a></p>
+    <p><a href="">Blogs</a></p>
+    <p><a href="">US labor Condition Application(LCA)</a></p>
+    <p><a href="">Contact US</a></p>
+</nav>
 </header>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.querySelector(".hamburger");
-        const nav = document.querySelector("nav");
+<div class="slideshow-container">
+  <div class="mySlides">
+      <img src="one.png" alt="Slide 1">
+      <div class="quote">
+          <p>Your Success, Our Commitment</p>
+          <h1>Unlock Potential, Unleash Growth with GigLeaz</h1>
+          <input type="submit" value="Get Started">
+      </div>
+  </div>
 
-        hamburger.addEventListener('click', function() {
-            nav.classList.toggle("active");
-        });
-    });
-</script>
-<div class="main_content">
-    <p>Gigleaz is a platform where you can KT </p>
+  <div class="mySlides">
+      <img src="two.png" alt="Slide 2">
+  </div>
+
+  <div class="mySlides">
+      <img src="three.png" alt="Slide 3">
+  </div>
+
+  <!-- Dots for navigation -->
+  <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="mini-dot"></span>
+      <span class="mini-dot"></span>
+      <span class="mini-dot"></span>
+      <span class="mini-dot"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="mini-dot"></span>
+      <span class="mini-dot"></span>
+      <span class="mini-dot"></span>
+      <span class="mini-dot"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
 </div>
 
-<!-- FOOTER START -->
+
+    <!-- JavaScript for slideshow -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</div>
+
+
+
 <div class="footer">
     <div class="contain">
         <div class="col">
@@ -122,7 +175,14 @@
             </ul>
         </div>
         <div class="clearfix"></div>
-    </div>
+        </div>
+        <input type="checkbox" id="services-trigger" name="services-close" hidden>
+   
+    <nav class="custom-service-nav">
+        <!-- Services -->
+    </nav>
+ 
+    </script>
 </div>
 </body>
 </html>
