@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="custom-header"><!--header-start-->
-    <img src="primary_logo.png" height="45px"/>
+    <img src="images/primary_logo.png" height="45px"/>
     <div class="custom-nav-details">
         
         <a href="" >Opportunities</a>
@@ -27,15 +27,16 @@
 <input type="checkbox" id="custom-menu-trigger" name="custom-menu-close" hidden>
 <nav class="custom-side-nav">
     <label for="custom-menu-trigger" class="custom-close-icon">+</label>
-    <img src="primary_logo.png" height="45px" style="padding-left: 12px;margin-bottom: 30px;"/>
+    <img src="images/primary_logo.png" height="45px" style="padding-left: 12px;margin-bottom: 30px;"/>
     <ul style="font-weight: bold;">
         <li><a href="#" >Join Us</a>
         </li>
         <li><a href="#">Excutive Leaders</a></li>
-        <li><a href="#">Jobs</a></li>
+        <li><a href="#" onclick="document.getElementById('jobs-trigger').click();">Jobs</a></li>
         <li><a href="#" onclick="document.getElementById('services-trigger').click();">Services</a></li>
-        <li><a href="#">Industries</a></li>
-        <li><a href="#">Platforms</a></li>
+        <li><a href="#" onclick="document.getElementById('industries-trigger').click();">Industries</a></li>
+        <li><a href="#" onclick="document.getElementById('platforms-trigger').click();">Platforms</a></li>
+        
     </ul>
     <br>
     <br>
@@ -49,7 +50,7 @@
 </header>
 <div class="slideshow-container">
   <div class="mySlides">
-      <img src="one.png" alt="Slide 1">
+      <img src="images/one.png" alt="Slide 1">
       <div class="quote">
           <p>Your Success, Our Commitment</p>
           <h1>Unlock Potential, Unleash Growth with GigLeaz</h1>
@@ -58,11 +59,11 @@
   </div>
 
   <div class="mySlides">
-      <img src="two.png" alt="Slide 2">
+      <img src="images/two.png" alt="Slide 2">
   </div>
 
   <div class="mySlides">
-      <img src="three.png" alt="Slide 3">
+      <img src="images/three.png" alt="Slide 3">
   </div>
 
   <!-- Dots for navigation -->
@@ -113,9 +114,42 @@
     </script>
 </div>
 
+<input type="checkbox" id="jobs-trigger" name="jobs-close" hidden>
+        <nav class="custom-job-nav">
+          <!-- Content for Jobs Slider -->
+          <h1>Jobs</h1>
+      </nav>  
+ 
+      <input type="checkbox" id="services-trigger" name="services-close" hidden>
+        <nav class="custom-service-nav">
+        <h1>Services</h1>
+        <table width="100%">
+          <tr>
+            <td rowspan="2"><h3>Explore</h3></td>
+            <td>Digital Marketing</td>
+            <td>Digital workplace Services</td>
+            <td>Metaverse</td>
+            <td>Digital Interaction</td>
+          </tr>
+          <tr>
+            <td>AI Brain</td>
+            <td>Digital Experience</td>
+            <td>Dgital Commerce</td>
+          </tr>   
+        </table>
+        </nav>
+        <input type="checkbox" id="industries-trigger" name="industries-close" hidden>
+        <nav class="custom-industries-nav">
+          <!-- Content for Industries Slider -->
+          <h1>Industries</h1>
+      </nav>
+        <input type="checkbox" id="platforms-trigger" name="platforms-close" hidden>
+        <nav class="custom-platforms-nav">
+          <!-- Content for Platforms Slider -->
+          <h1>Platforms</h1>
+      </nav>
 
-
-<div class="footer">
+<!--<div class="footer">
     <div class="contain">
         <div class="col">
             <h1>Company</h1>
@@ -169,20 +203,13 @@
         <div class="col social">
             <h1>Social</h1>
             <ul>
-                <li><img src="linked.svg" width="32" style="width: 32px;"></li>
-                <li><img src="insta.svg" width="32" style="width: 32px;"></li>
-                <li><img src="yt.svg" width="32" style="width: 32px;"></li>
+                <li><img src="images/linked.svg" width="32" style="width: 32px;"></li>
+                <li><img src="images/insta.svg" width="32" style="width: 32px;"></li>
+                <li><img src="images/yt.svg" width="32" style="width: 32px;"></li>
             </ul>
         </div>
         <div class="clearfix"></div>
-        </div>
-        <input type="checkbox" id="services-trigger" name="services-close" hidden>
-   
-    <nav class="custom-service-nav">
-        <!-- Services -->
-    </nav>
- 
-    </script>
+        </div>-->
 </div>
 </body>
 </html>
