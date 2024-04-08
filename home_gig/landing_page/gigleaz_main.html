@@ -48,71 +48,65 @@
     <p><a href="">Contact US</a></p>
 </nav>
 </header>
-<div class="slideshow-container">
-  <div class="mySlides">
-      <img src="images/one.png" alt="Slide 1">
-      <div class="quote">
-          <p>Your Success, Our Commitment</p>
-          <h1>Unlock Potential, Unleash Growth with GigLeaz</h1>
-          <input type="submit" value="Get Started">
-      </div>
-  </div>
-
-  <div class="mySlides">
-      <img src="images/two.png" alt="Slide 2">
-  </div>
-
-  <div class="mySlides">
-      <img src="images/three.png" alt="Slide 3">
-  </div>
-
-  <!-- Dots for navigation -->
+<div class="conatianer-slides">
+<section id="sectionOne">
+    <img src="images/three.png">
+    <div class="quote">
+      <p>Your Success, Our Commitment</p>
+      <h1>Unlock Potential, Unleash Growth with GigLeaz</h1>
+      <input type="submit" value="Get Started">
+    </div>
   <div class="dot-container">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="mini-dot"></span>
-      <span class="mini-dot"></span>
-      <span class="mini-dot"></span>
-      <span class="mini-dot"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="mini-dot"></span>
-      <span class="mini-dot"></span>
-      <span class="mini-dot"></span>
-      <span class="mini-dot"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="scrollToSection(1)"></span>
+    <span class="mini-dot"></span>
+    <span class="mini-dot"></span>
+    <span class="mini-dot"></span>
+    <span class="mini-dot"></span>
+    <span class="dot"onclick="scrollToSection(2)"></span>
+    <span class="mini-dot"></span>
+    <span class="mini-dot"></span>
+    <span class="mini-dot"></span>
+    <span class="mini-dot"></span>
+    <span class="dot" onclick="scrollToSection(3)"></span>
   </div>
+</section>
+  <section id="sectionTwo">
+    <h1 align="center">Empower with <br>Expertise & inovation</h1>
+  </section>
+  <section id="sectionThree">
+    <h1 align="center">Section Three</h1>
+  </section>
 </div>
+<script>
+  window.addEventListener('scroll', function() {
+    var scrollPosition = window.scrollY;
+    var sections = document.querySelectorAll('section');
+    var dots = document.querySelectorAll('.dot');
 
-
-    <!-- JavaScript for slideshow -->
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
+    dots.forEach(function(dot, index) {
+        var sectionTop = sections[index].offsetTop;
+        var sectionHeight = sections[index].clientHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
+            dots.forEach(function(dot) {
+                dot.style.backgroundColor = '#29ab87'; // Reset all dots to default color
+            });
+            dot.style.backgroundColor = '#fff'; // Set active dot to white
         }
+    });
+});
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
+function scrollToSection(sectionIndex) {
+    var sections = document.querySelectorAll('section');
+    var section = sections[sectionIndex - 1]; // Adjust index to match section numbering
 
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-        }
-    </script>
-</div>
+    window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth'
+    });
+}
+
+
+</script>
 
 <input type="checkbox" id="jobs-trigger" name="jobs-close" hidden>
         <nav class="custom-job-nav">
